@@ -1,8 +1,8 @@
 import { ImageSource, Loader } from "excalibur";
-import sword from "./images/sword.png";
+import poop from "./images/poop.png";
 
 export const Resources = {
-  Sword: new ImageSource(sword)
+  Poop: new ImageSource(poop)
 } as const;
 
 export const loader = new Loader();

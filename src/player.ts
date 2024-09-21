@@ -11,7 +11,7 @@ export class Player extends Actor {
   }
 
   onInitialize() {
-    this.graphics.add(Resources.Sword.toSprite());
+    this.graphics.add(Resources.Poop.toSprite());
     this.on('pointerup', () => {
       alert('yo');
     });

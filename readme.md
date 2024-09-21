@@ -1,9 +1,8 @@
-# Excalibur TypeScript & Vite template
+# Simple 2d game created with excalibur js
 
 ## Getting Started
 
-1. [Generate a repository](https://github.com/excaliburjs/template-ts-vite/generate) from this template
-2. Modify the `package.json` with your own details
-3. Run `npm install` to install dependencies
-4. Run `npm run dev` to start the Vite server!
-5. Have fun!
+1. Modify the `package.json` with your own details
+2. Run `npm install` to install dependencies
+3. Run `npm run dev` to start the Vite server!
+4. Have fun!
