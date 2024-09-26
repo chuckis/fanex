@@ -1,8 +1,12 @@
 import { ImageSource, Loader } from "excalibur";
 import poop from "./images/poop.png";
+import fan from "./images/fan.png";
+import cloud from "./images/Cloud.png";
 
 export const Resources = {
-  Poop: new ImageSource(poop)
+  Poop: new ImageSource(poop),
+  Fan: new ImageSource(fan),
+  Cloud: new ImageSource(cloud)
 } as const;
 
 export const loader = new Loader();
