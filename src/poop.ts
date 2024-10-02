@@ -10,23 +10,18 @@ export class Poop extends ex.Actor {
         width: 100,
         height: 100
       });
+      this.pointer.useGraphicsBounds = true;
       this.on('pointerdown', () => {
-        console.log('down')
-      });
-      this.on('pointerup', () => {
-        console.log('up')
+        this.kill();
       });
     }
   
     onInitialize() {
       this.graphics.add(Resources.Poop.toSprite());
-      this.on('pointerup', () => {
-        alert('yo');
-      });
     }
 
     override onPostUpdate(_engine: ex.Engine, _delta: number): void {
-        this.actions.moveTo(ex.vec(400, 300), 200);
+        this.actions.moveTo(ex.vec(400, 300), 80);
     }
     
   }

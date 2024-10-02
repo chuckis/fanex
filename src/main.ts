@@ -7,7 +7,7 @@ import { getRandomBorderCoordinate } from "./utils";
 
 class Game extends ex.Engine {
   
-  private poops: Poop[];
+  poops: Poop[];
   
     constructor() {
       super({width: 800, height: 600});
@@ -19,8 +19,17 @@ class Game extends ex.Engine {
       this.add(fan);
       this.start(loader);
       this.add(new Cloud(ex.vec(400, 100)));
+      const timer = new ex.Timer({
+        fcn: () => this.generatePoop(),
+        repeats: true,
+        interval: 1500,
+      });
+      this.add(timer);
+      timer.start();
+      
     }
-    spawnPoop = () => {
+
+    generatePoop = () => {
       const coords = getRandomBorderCoordinate(800, 400);
       const poop = new Poop(ex.vec(... coords));
       this.poops.push(poop);
@@ -30,6 +39,3 @@ class Game extends ex.Engine {
   
   export const game = new Game();
   game.initialize();
-  game.spawnPoop();
-  
-  
