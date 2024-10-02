@@ -1,35 +1,35 @@
 import * as ex from 'excalibur';
-import { Fan, Poop } from "./player";
+import { Poop } from "./poop";
 import { loader } from "./resources";
+import { Fan } from "./fan";
 import { Cloud } from './cloud';
+import { getRandomBorderCoordinate } from "./utils";
 
 class Game extends ex.Engine {
   
   private poops: Poop[];
-  // private fan: Fan;
-
+  
     constructor() {
       super({width: 800, height: 600});
       this.poops = [];
     }
     
     initialize() {
-      const fan = new Fan();
+      const fan = new Fan(ex.vec(400, 300));
       this.add(fan);
       this.start(loader);
       this.add(new Cloud(ex.vec(400, 100)));
     }
-    spawnPoop = (
-      x: number,
-      y: number
-    ) => {
-      const poop = new Poop(300, 300);
-      this.poops.push(poop)
+    spawnPoop = () => {
+      const coords = getRandomBorderCoordinate(800, 400);
+      const poop = new Poop(ex.vec(... coords));
+      this.poops.push(poop);
       this.add(poop);
     }
   }
   
   export const game = new Game();
   game.initialize();
-  game.spawnPoop(200, 300);
+  game.spawnPoop();
+  
   
