@@ -1,8 +1,9 @@
 import * as ex from "excalibur";
 import { Resources } from "./resources";
+import { GameManager } from "./gamemanager";
 
 export class Poop extends ex.Actor {
-
+    
     constructor(pos: ex.Vector) {
       super({
         name: 'poop',
@@ -12,7 +13,8 @@ export class Poop extends ex.Actor {
       });
       this.pointer.useGraphicsBounds = true;
       this.on('pointerdown', () => {
-        this.kill();
+        this.kill(); 
+        GameManager.score += 1;
       });
     }
   
